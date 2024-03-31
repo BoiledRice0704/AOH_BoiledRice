@@ -40,7 +40,7 @@ app.use(`${baseUrl}/qrcode`, qrCodeRoutes);
 app.use(`${baseUrl}/`, wasteRoutes);
 
 // Get port from environment variable or use default
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 // Start the server
 app.listen(PORT, () => {
