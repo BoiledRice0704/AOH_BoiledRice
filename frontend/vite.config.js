@@ -5,7 +5,7 @@ import mkcert from 'vite-plugin-mkcert'
 // vite.config.js
 export default defineConfig({
   server: {
-    host: 'yourdesiredhostname.com',
+    host: 'https://aoh-boiledrice.onrender.com/',
   },
 });
 
