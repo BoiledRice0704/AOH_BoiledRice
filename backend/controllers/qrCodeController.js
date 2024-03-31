@@ -44,16 +44,6 @@ exports.createQrCode = async (req, res) => {
       tokenId: user._id, // Use user's _id as token ID
     });
 
-    //string example
-    const string = `{url: "http://localhost:3000/api/user/update", body:{username:${localStorage.getItem(
-      "username"
-    )}, totalDays:${dummyData.totalDays}}, dates:${
-      dummyData.dates
-    }, dailyPlan: ${
-      dummyData.dailyPlan
-    }, signature:${personalSignResult}, tokenId:${
-      dummyData.tokenId
-    }, currentDate:${new Date()}}`;
 
     // Save the QR code to the database
     // await newQrCode.save();
