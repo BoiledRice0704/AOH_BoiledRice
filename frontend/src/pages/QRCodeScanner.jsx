@@ -1,33 +1,61 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserQRCodeReader } from '@zxing/library';
-import Webcam from 'react-webcam';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import QrReader from '../components/QrReader';
+import Sidebar from '../components/Sidebar';
+import { useDispatch } from "react-redux";
+import {setIndex} from '../slices/generalSlice'
+
 
 const QRCodeScanner = () => {
-  const [result, setResult] = useState('');
-  const [reader, setReader] = useState(null);
-  const email = localStorage.getItem("email")
+  const dispatch = useDispatch();
   useEffect(() => {
-    const codeReader = new BrowserQRCodeReader();
-    setReader(codeReader);
+    dispatch(setIndex(5))
+  }, [])
+  // const [result, setResult] = useState('');
+  // const [reader, setReader] = useState(null);
+  // const [imgSrc, setImgSrc] = useState(null);
+  // const email = localStorage.getItem("email")
+  // const webcamRef = useRef(null);
 
-    return () => {
-      codeReader.reset();
-    };
-  }, []);
+  // const capture = useCallback(() => {
+  //   const imageSrc = webcamRef.current.getScreenshot();
+  //   setImgSrc(imageSrc);
+  // }, [webcamRef]);
 
-  const scanCode = async () => {
-    try {
-      const videoElement = document.getElementById('webcam');
-      const result = await reader.decodeFromVideoElement(videoElement);
-      setResult(result.getText());
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  // useEffect(() => {
+  //   const codeReader = new BrowserQRCodeReader();
+  //   setReader(codeReader);
+
+  //   return () => {
+  //     codeReader.reset();
+  //   };
+  // }, []);
+
+  // const handleScan = data => {
+  //   if (data) {
+  //     console.log('Result: ', data);
+  //   }
+  // }
+
+  // const handleError = err => {
+  //   console.error(err);
+  // }
+
+  // const scanCode = async () => {
+  //   try {
+  //     const videoElement = webcamRef.current.video;
+  //     const result = await reader.decodeFromVideoElement(videoElement);
+  //     console.log(result.getText())
+  //     setResult(result.getText());
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   return (
-    <div>
-      <Webcam
+    <div className="QRCode flex flex-col">
+      <Sidebar/>
+      {/* <Webcam
+      ref={webcamRef}
         id="webcam"
         audio={false}
         width={400}
@@ -36,9 +64,10 @@ const QRCodeScanner = () => {
         videoConstraints={{
           facingMode: 'environment',
         }}
-      />
-      <button onClick={scanCode}>Scan QR Code</button>
-      <p>{result}</p>
+      /> */}
+      {/* <button onClick={capture}>Scan QR Code</button>
+      <p>{result}</p> */}
+      <QrReader/>
     </div>
   );
 }
