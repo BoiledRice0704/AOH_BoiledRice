@@ -2,10 +2,10 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import mkcert from 'vite-plugin-mkcert'
 
-// https://vitejs.dev/config/
+// vite.config.js
 export default defineConfig({
   server: {
-    https: true,
+    host: 'yourdesiredhostname.com',
   },
-  plugins: [react(),mkcert()],
-})
+});
+
