@@ -61,6 +61,13 @@ const Sidebar = () => {
         </Link>
       )}
 
+      {!isAdmin && ( // Only render the link if the user is admin
+        <Link to="/scan" className='mt-10 w-7 mx-auto' onClick={() => handleLinkClick(5)}>
+          <img src={qrcodelogo} alt="" />
+          {currentIndex === 5 && <div className='w-7 border-2 border-[#292929] my-1 '></div>}
+        </Link>
+      )}
+
       <button className='mt-10  mx-auto bottom-3 absolute flex justify-center w-full' onClick={toggleUpdateForm}>
         <img src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-PNG-File.png" alt="" className='w-9' />
       </button>
