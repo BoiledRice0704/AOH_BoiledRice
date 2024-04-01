@@ -18,7 +18,7 @@ import './landing.css'
 const Landing = () => {
   return (
     <div
-      className="leading-normal tracking-normal min-h-[110vh]  text-indigo-400 p-6 bg-cover bg-fixed max-xl:min-h-[180vh] select-none"
+      className="leading-normal tracking-normal min-h-[100vh]  text-indigo-400 p-6 bg-cover bg-fixed max-xl:min-h-[180vh] select-none"
       style={{ backgroundImage: `url(${header})` }}
     >
       <div className="w-full container mx-auto">
@@ -75,7 +75,7 @@ const Landing = () => {
         </div>
 
         <motion.div
-          className="w-1/2 mt-[-500px] xl:mt-[90px] relative md:mt-15 max-xl:top-[650px] max-xl:left-[80px] max-lg:left-[-65px] max-md:left-[-280px] max-md:top-[900px] max-sm:left-[-300px] max-sm:top-[900px]  p-5"
+          className="w-1/2 h-[200x] mt-[-500px] xl:mt-[35vh] relative md:mt-15 max-xl:top-[650px] max-xl:left-[80px] max-lg:left-[-65px] max-md:left-[-280px] max-md:top-[900px] max-sm:left-[-300px] max-sm:top-[900px]  p-5"
          
           
           draggable="false"
