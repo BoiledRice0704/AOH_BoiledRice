@@ -50,7 +50,7 @@ exports.createQrCode = async (req, res) => {
 
     // Generate URL
     const url = `http://localhost:3000/api/user/update?username=${user.username}&totalDays=${totalDays}&tokenId=${user._id}&currentDate=${Date.now()}`;
-    console.log(url)
+    // console.log(url)
 
     // Return success response along with the generated URL
     res.status(201).json({ url });

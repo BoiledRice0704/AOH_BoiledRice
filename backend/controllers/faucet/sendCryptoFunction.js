@@ -27,8 +27,8 @@ async function send(address, amount) {
     // Broadcast the signed transaction
     const txHash = await web3.eth.sendTransaction(signedTx.transaction);
 
-    console.log(`Transaction hash: ${txHash}`);
-    console.log(`Successfully sent ${amount} CBC tokens to ${toAddress}`);
+    // console.log(`Transaction hash: ${txHash}`);
+    // console.log(`Successfully sent ${amount} CBC tokens to ${toAddress}`);
   } catch (error) {
     console.error("Error sending tokens:", error);
   }

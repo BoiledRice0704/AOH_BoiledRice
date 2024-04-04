@@ -55,7 +55,7 @@ exports.updateUser = async (req, res) => {
 exports.getUserByUsername = async (req, res) => {
   try {
     const { userEmail } = req.body;
-    console.log('Received email:', userEmail); // Log the received email
+    // console.log('Received email:', userEmail); // Log the received email
 
     if (!userEmail) {
       return res.status(400).json({ error: 'User email not found in request body' });
@@ -63,7 +63,7 @@ exports.getUserByUsername = async (req, res) => {
 
     // Query the User model to find the user by email
     const user = await User.findOne({ email: userEmail });
-    console.log(user)
+    // console.log(user)
 
     if (!user) {
       return res.status(404).json({ error: 'User not found' });
